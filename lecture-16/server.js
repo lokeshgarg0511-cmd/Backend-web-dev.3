@@ -1,6 +1,9 @@
 const express=require("express");
+// const morgan=require("morgan")
 const app=express();
 const PORT=3000
+
+// app.use(morgan("combined"))
 
 const logMiddleware=(req,res,next)=>{
     //  req.name="Lokesh garg"
@@ -9,6 +12,12 @@ const logMiddleware=(req,res,next)=>{
     next();
 }
 
+const welcomeMiddleware=(req,res,next)=>{
+    console.log("Welcome To My Website");
+    next();
+}
+
+app.use(welcomeMiddleware);
 app.use(logMiddleware);
 
 app.get("/",(req,res)=>{

@@ -25,13 +25,16 @@ app.get("/",(req,res)=>{
     res.send("Hello From server")
 })
 
-
-
 app.get("/about",(req,res)=>{
     console.log("Abotpage")
     res.send("Hello from about page")
+  
 })
 
+
+app.use((req,res)=>{ // invalid route middleware
+    res.status(404).json({success:false, message:"Page not found"})
+})
 app.listen(PORT,()=>{
     console.log("Server is running on http://localhost:${PORT}");
 });

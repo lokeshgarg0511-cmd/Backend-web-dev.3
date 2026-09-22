@@ -2,6 +2,8 @@ const express = require("express");
 const app  =express();
 const PORT = 3000;
 
+
+//  ye error ko find karne ke ye h ==> "TRY and CATCH method"
 app.get('/', (req,res)=>{
     try{
         throw new Error("Something went wrong guys");

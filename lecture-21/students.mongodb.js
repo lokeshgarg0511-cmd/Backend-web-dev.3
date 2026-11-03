@@ -2,12 +2,12 @@ use("University")
 // """ insert method"""
 // db.studentdb.insert([
 //     {
-//     name: "Alex",
-//     section: "k",
+//     name: "amn",
+//     section: "A",
 //     course: "Btech",
 //     semester:5,
 //     marks:65,
-//     contact:9572564589,
+//     contact:9572764589,
 //     city:"Grugram"
 //     },
 //     {
@@ -91,4 +91,4 @@ use("University")
 // db.studentdb.find().skip(0).limit(3)
 
 
-db.studentdb.find().sort({marks:-1}) // -1 for decending,1 for accending
+// db.studentdb.find().sort({marks:-1}) // -1 for decending,1 for accending

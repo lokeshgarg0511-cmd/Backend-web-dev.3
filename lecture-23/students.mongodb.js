@@ -1,31 +1,48 @@
 use("University")
 
-db.studentdb.aggregate(
-    [
-        {
-            $match:{
-                course:"BCA"
-            }
-        }
-        ,{
-            $project:{
-                name:1,
-                section:1,
-                marks:1,
-                semester:1,
-                _id:0
-            }
-        }
-        ,{
-            $group:{
-                _id:"$semester",
-                totalMarks:{$sum:"$marks"},
-                averageMarks:{$avg:"$marks"},
-                maxMarks:{$max:"$marks"},
-                minMarks:{$min:"$marks"},
-                totalStudents:{$sum:1}
+// db.studentdb.aggregate(
+//     [
+//         {
+//             $match:{
+//                 course:"BCA"
+//             }
+//         }
+//         ,{
+//             $project:{
+//                 name:1,
+//                 section:1,
+//                 marks:1,
+//                 semester:1,
+//                 _id:0
+//             }
+//         }
+//         ,{
+//             $group:{
+//                 _id:"$semester",
+//                 totalMarks:{$sum:"$marks"},
+//                 averageMarks:{$avg:"$marks"},
+//                 maxMarks:{$max:"$marks"},
+//                 minMarks:{$min:"$marks"},
+//                 totalStudents:{$sum:1}
 
-            }
-        }
-    ]
-)
+//             }
+//         },{
+//             $sort:{
+//                 maxMarks:-1
+//             }
+//         }
+//         // ,{
+//         //     $limit:1
+//         // }
+//         ,{
+//             $count:"totalMarks"
+//         }
+//     ]
+// )
+
+db.studentdb.getIndexes()
+// db.studentdb.createIndex(
+//     {
+//         contact:1
+//     }
+// 
